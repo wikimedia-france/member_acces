@@ -1,4 +1,4 @@
-# member_acces
+# member_access
 Scripts that manage some access synching when memberships expire
 
 ## Installation

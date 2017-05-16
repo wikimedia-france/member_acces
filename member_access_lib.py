@@ -74,6 +74,26 @@ class MemberAccess:
 
         return relations
 
+    def contact_emails(self, contact):
+        # Get all the emails associated with the contact
+        query_payload = {
+            'entity': "Email",
+            'action': 'get',
+            'contact_id': contact,
+        }
+        response = self.API_query(query_payload)
+        values = response['values']
+        emails = []
+        if len(values):
+            for k, v in values.items():
+                emails.append(v['email'])
+
+        emails = list(set(emails))
+        print("{} emails found for contact {}".format(
+            len(emails),
+            contact))
+        return emails
+
     def change_group_contact_status(self, contact, group, status):
         # Adds or removes a contact from a group
         if status not in ["Added", "Removed"]:

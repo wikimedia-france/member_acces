@@ -25,7 +25,8 @@ class MemberAccess:
         Executes a query on the API and returns the result
         as a python dict
         """
-        payload = {**self.base_payload, **query_payload}
+        payload = self.base_payload.copy()
+        payload.update(query_payload)
         response = requests.post(self.rest_url, params=payload)
         data = json.loads(response.text)
         if data['is_error'] == 0:

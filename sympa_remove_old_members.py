@@ -52,11 +52,13 @@ if __name__ == "__main__":
     # Connect to the Sympa MySQL Db
     user = configfile.get('mysql', 'user')
     password = configfile.get('mysql', 'password')
+    host = configfile.get('mysql', 'host')
+    database = configfile.get('mysql', 'database')
 
-    db = MySQLdb.connect(host="localhost",
+    db = MySQLdb.connect(host=host,
                          user=user,
                          passwd=password,
-                         db="sympa")
+                         db=database)
 
     # you must create a Cursor object. It will let
     #  you execute all the queries you need

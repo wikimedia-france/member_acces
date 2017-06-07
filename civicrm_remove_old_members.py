@@ -12,6 +12,7 @@ if __name__ == "__main__":
     config['api_key'] = configfile.get('civicrm', 'api_key')
     config['key'] = configfile.get('civicrm', 'key')
     config['rest_url'] = configfile.get('civicrm', 'rest_url')
+    config['log_file'] = "civicrm_remove_old_members.log"
 
     ma = MemberAccess(config)
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import configparser
 from member_access_lib import *
 
@@ -7,7 +8,7 @@ if __name__ == "__main__":
 
     # Get the server config
     configfile = configparser.ConfigParser()
-    configfile.read('config.ini')
+    configfile.read(os.path.join(os.path.dirname(__file__), 'config.ini'))
     config = {}
     config['api_key'] = configfile.get('civicrm', 'api_key')
     config['key'] = configfile.get('civicrm', 'key')

@@ -1,3 +1,5 @@
+This repository is now an archive. The updated version is available at https://framagit.org/wikimedia-france/member_access
+
 # member_access
 Scripts that manage some access synching when memberships expire
 
